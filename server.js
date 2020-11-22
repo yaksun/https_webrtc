@@ -16,9 +16,9 @@ const options = {
     cert:fs.readFileSync('./cert/4809780_www.yaksun.icu.pem')
 }
 
-var https_server = https.createServer(app)
-https_server.listen(83,'0.0.0.0')
+var https_server = https.createServer(options,app)
+https_server.listen(443,'0.0.0.0')
 
 
-console.log('服务器启动中......');
+console.log('服务器');
 
