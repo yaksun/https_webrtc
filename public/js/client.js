@@ -5,7 +5,7 @@ window.onload = function(){
 
     if(navigator && navigator.mediaDevices){
         navigator.mediaDevices.enumerateDevices().then(getDevices)
-        .error(handleError)
+        .catch(handleError)
     }
 
     function handleError(){
