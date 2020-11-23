@@ -8,8 +8,8 @@ window.onload = function(){
         return 
     }
 
-    navigator.mediaDevices.getUserMedia({video:true,audio:false}).
-    then(handleInfo)
+    navigator.mediaDevices.getUserMedia({video:true,audio:false})
+    .then(handleInfo)
     .then(getDevices)
     .catch(handleError)
 
@@ -22,7 +22,7 @@ window.onload = function(){
 
 
     function handleInfo(stream){
-        sourceInput.srcObject = stream 
+        sourceVideo.srcObject = stream 
         return navigator.mediaDevices.enumerateDevices()
     }
 
