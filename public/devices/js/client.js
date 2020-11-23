@@ -47,7 +47,7 @@ window.onload = function(){
     }
 
     takePic.onclick = function(){
-        picture.getContext('2d').drawImg(sourceVideo,0,0,picture.clientWidth,picture.height)
+        picture.getContext('2d').drawImg(sourceVideo,0,0,picture.width,picture.height)
     }
 
 }
