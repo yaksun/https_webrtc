@@ -3,6 +3,11 @@ window.onload = function(){
     var audioOutput = document.querySelector('select#audioOutput')
     var vedioInput = document.querySelector('select#vedioInput')
     var sourceVideo = document.querySelector('video#sourceVideo')
+    var takePic = document.querySelector('button#takePic')
+    var picture = document.querySelector('canvas#picture')
+
+    picture.width = 320
+    picture.height = 240
 
     if(!navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
         return 
@@ -39,6 +44,10 @@ window.onload = function(){
                 vedioInput.appendChild(option)
             }
         })
+    }
+
+    takePic.onclick = function(){
+        picture.getContext('2d').drawImg(sourceVideo,0,0,picture.clientWidth,picture.height)
     }
 
 }
