@@ -4,7 +4,7 @@ window.onload = function(){
     var vedioInput = document.querySelector('select#vedioInput')
     var sourceVideo = document.querySelector('video#sourceVideo')
 
-    if(!navigator.mediaDevices || navigator.mediaDevices.getUserMedia){
+    if(!navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
         return 
     }
 
