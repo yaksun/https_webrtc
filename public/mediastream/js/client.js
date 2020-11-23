@@ -6,7 +6,7 @@ window.onload = function(){
         return 
     }
 
-    navigator.mediaDevices.getUserMedia({vidio:true,audio:true}).then(handleInfo)
+    navigator.mediaDevices.getUserMedia({video:true,audio:true}).then(handleInfo)
     .catch(handleerr)
 
     function handleInfo(stream){
