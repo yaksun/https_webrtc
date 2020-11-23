@@ -5,6 +5,7 @@ window.onload = function(){
     var sourceVideo = document.querySelector('video#sourceVideo')
     var takePic = document.querySelector('button#takePic')
     var picture = document.querySelector('canvas#picture')
+    var filter = document.querySelector('select#filter')
 
     picture.width = 320
     picture.height = 240
@@ -47,7 +48,12 @@ window.onload = function(){
     }
 
     takePic.onclick = function(){
+        // 截取视频图片
         picture.getContext('2d').drawImage(sourceVideo,0,0,picture.width,picture.height)
+    }
+
+    filter.onchange = function(){
+        sourceVideo.className = filter.value 
     }
 
 }

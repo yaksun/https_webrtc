@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .none{
+            -webkit-filter:none;
+            }
+            .blur{
+            -webkit-filter:blur(3px);
+            }
+            .grayscale{
+            -webkit-filter:grayscale;
+            }
+            .inver{
+            -webkit-filter:invert(1);
+            }
+            .sepia{
+            -webkit-filter:sepia(1);
+            }
+    </style>
 </head>
 <body>
     <div>
@@ -19,6 +36,13 @@
         <select  id="vedioInput"></select>
     </div>
     <video id="sourceVideo" autoplay playsinline preload="auto"></video>
+    <select id="filter">
+        <option value="none">none</option>
+        <option value="blur">blur</option>
+        <option value="grayscale">grayscale</option>
+        <option value="inver">inver</option> 
+        <option value="sepia">sepia</option> 
+    </select>
     <button id='takePic'>截屏</button>
     <canvas id='picture'></canvas>
     <script src="./js/client.js"></script>
