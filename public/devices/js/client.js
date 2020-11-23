@@ -2,14 +2,28 @@ window.onload = function(){
     var audioInput = document.querySelector('select#audioInput')
     var audioOutput = document.querySelector('select#audioOutput')
     var vedioInput = document.querySelector('select#vedioInput')
+    var sourceVideo = document.querySelector('video#sourceVideo')
 
-    if(navigator.mediaDevices){
-        navigator.mediaDevices.enumerateDevices().then(getDevices)
-        .catch(handleError)
+    if(!navigator.mediaDevices || navigator.mediaDevices.getUserMedia){
+        return 
     }
 
+    navigator.mediaDevices.getUserMedia({video:true,audio:false}).
+    then(handleInfo)
+    .then(getDevices)
+    .catch(handleError)
+
+    
+
+   
     function handleError(){
 
+    }
+
+
+    function handleInfo(stream){
+        sourceInput.srcObject = stream 
+        return navigator.mediaDevices.enumerateDevices()
     }
 
     function getDevices(deviceInfos){
